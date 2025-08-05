@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "restaurant_db"; // তোমার ডাটাবেজের নাম, চাইলে বদলাও
+$dbname = "restaurant_db"; 
 
 // 2. Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -32,4 +32,5 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
+
 ?>
