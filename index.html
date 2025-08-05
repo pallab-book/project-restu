@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delicious Bites - Restaurant</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #fefefe;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(45deg, #ff5e57, #ffb347, #88d8b0);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #444;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    nav a:hover {
+      background-color: #ff5e57;
+    }
+
+    .hero {
+      background-image: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092');
+      background-size: cover;
+      background-position: center;
+      height: 60vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 2px 2px 5px #000;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      text-align: center;
+    }
+
+    .content {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .form-section {
+      background: #f7f7f7;
+      padding: 30px;
+      margin-top: 40px;
+      border-radius: 10px;
+    }
+
+    .form-section input,
+    .form-section textarea,
+    .form-section select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form-section button {
+      background-color: #ff5e57;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .form-section button:hover {
+      background-color: #e94b44;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Delicious Bites</h1>
+    <p>Fresh • Fast • Flavorful</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#menu">Menu Items</a>
+    <a href="#orders">Orders</a>
+    <a href="#reservations">Reservations</a>
+    <a href="#feedback">Feedback</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="hero">
+    <h1>Welcome to Our Restaurant </h1>
+  </section>
+
+  <section class="content" id="menu">
+    <h2>Menu Items</h2>
+    <div class="section-grid">
+      <div class="card">
+        <h3>Chicken Biryani</h3>
+        <p>Delicious spicy biryani with chicken and fragrant rice.</p>
+      </div>
+      <div class="card">
+        <h3>Veg Pasta</h3>
+        <p>Creamy pasta with fresh vegetables and herbs.</p>
+      </div>
+      <div class="card">
+        <h3>Beef Burger</h3>
+        <p>Juicy beef patty with cheese and fresh veggies.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="content" id="orders">
+    <h2>Place an Order</h2>
+    <form class="form-section" method="POST" action="order.php">
+      <input type="text" name="customer_name" placeholder="Customer Name" required />
+      <input type="text" name="phone" placeholder="Phone Number" required />
+      <select name="menu_item" required>
+        <option value="">-- Select Menu Item --</option>
+        <option value="Biryani">Biryani</option>
+        <option value="Pasta">Pasta</option>
+        <option value="Burger">Burger</option>
+      </select>
+      <textarea name="address" rows="3" placeholder="Delivery Address" required></textarea>
+      <button type="submit">Submit Order</button>
+    </form>
+  </section>
+
+  <section class="content" id="reservations">
+    <h2>Make a Reservation</h2>
+    <form class="form-section">
+      <input type="text" placeholder="Customer Name" required />
+      <input type="date" required />
+      <input type="time" required />
+      <input type="number" placeholder="Number of People" required />
+      <button type="submit">Reserve Table</button>
+    </form>
+  </section>
+
+  <section class="content" id="feedback">
+    <h2>Customer Feedback</h2>
+    <form class="form-section">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="4" placeholder="Write your feedback here..." required></textarea>
+      <button type="submit">Submit Feedback</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Delicious Bites. All rights reserved.</p>
+  </footer>
+</body>
+</html>
